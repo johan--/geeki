@@ -1,7 +1,9 @@
 Ext.define('Rwiki.view.TreePanel', {
   extend: 'Ext.tree.Panel',
-  alias: 'widget.rwiki.treePanel',
-  requires: ['Rwiki.store.TreeStore'],
+  alias: 'widget.rwikiTreePanel',
+  requires: [
+    'Rwiki.store.TreeStore'
+  ],
 
   title: 'Rwiki Pages',
   width: 300,

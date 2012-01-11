@@ -9,10 +9,10 @@ Ext.define('Rwiki.view.Viewport', {
   layout: 'border',
   items: [{
     region: 'center',
-    xtype: 'rwiki.tabPanel'
+    xtype: 'rwikiTabPanel'
   }, {
     region: 'west',
-    xtype: 'rwiki.treePanel'
+    xtype: 'rwikiTreePanel'
   }]
 });
 
