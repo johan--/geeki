@@ -1,6 +1,6 @@
 Ext.define('Rwiki.view.TabPanel', {
   extend: 'Ext.tab.Panel',
-  alias: 'widget.tabPanel',
+  alias: 'widget.rwiki.tabPanel',
   items: [{
     title: 'Tab one'
   }, {
