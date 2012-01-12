@@ -10,6 +10,8 @@ Ext.define('Rwiki.view.TreePanel', {
   collapsible: true,
   resizable: true,
   store: Ext.create('Rwiki.store.TreeStore'),
-  root: {}
+
+  root: { expanded: true },
+  rootVisible: false
 });
 

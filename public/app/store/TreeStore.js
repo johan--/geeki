@@ -9,6 +9,7 @@ Ext.define('Rwiki.store.TreeStore', {
       type: 'json',
       root: 'pages'
     }
-  }
+  },
+  root: { expanded: true }
 });
 
