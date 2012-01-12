@@ -1,0 +1,14 @@
+{
+  pages: {
+    text: 'Home page',
+    expand: true,
+    children: [{
+      text: 'Page one',
+      leaf: true
+    }, {
+      text: 'Page two',
+      leaf: true
+    }]
+  }
+}
+

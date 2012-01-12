@@ -9,6 +9,7 @@ Ext.define('Rwiki.view.TreePanel', {
   width: 300,
   collapsible: true,
   resizable: true,
-  store: Ext.create('Rwiki.store.TreeStore')
+  store: Ext.create('Rwiki.store.TreeStore'),
+  root: {}
 });
 
