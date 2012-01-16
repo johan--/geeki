@@ -17,4 +17,3 @@ Ext.define('Rwiki.controller.TabPanel', {
     console.log(tab);
   }
 });
-

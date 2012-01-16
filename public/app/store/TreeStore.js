@@ -14,4 +14,3 @@ Ext.define('Rwiki.store.TreeStore', {
     }
   }
 });
-

@@ -5,4 +5,3 @@ Ext.define('Rwiki.view.TabPanel', {
   title: 'Rwiki TabPanel',
   items: []
 });
-

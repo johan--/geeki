@@ -13,4 +13,3 @@ Ext.define('Rwiki.view.TreePanel', {
 
   rootVisible: false
 });
-

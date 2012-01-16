@@ -50,5 +50,3 @@ Ext.define('Rwiki.controller.TreePanel', {
     event.stopEvent();
   }
 });
-
-

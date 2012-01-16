@@ -15,4 +15,3 @@ Ext.define('Rwiki.view.Viewport', {
     xtype: 'rwikiTreePanel'
   }]
 });
-

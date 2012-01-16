@@ -18,4 +18,3 @@ Ext.define('Rwiki.view.TreeNodeMenu', {
     text: 'Delete page'
   }]
 });
-
