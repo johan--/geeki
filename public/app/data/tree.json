@@ -3,6 +3,7 @@
   text: 'Home page',
   body: 'The home page content',
   leaf: false,
+  expanded: true,
   children: [{
     id: 2,
     text: 'Page one',
