@@ -1,5 +1,8 @@
 Ext.define('Rwiki.controller.TreePanel', {
   extend: 'Ext.app.Controller',
+  requires: [
+    'Rwiki.view.TreeNodeMenu'
+  ],
 
   views: [
     'TreePanel'
@@ -28,6 +31,16 @@ Ext.define('Rwiki.controller.TreePanel', {
           var tab = Ext.create('Ext.tab.Tab', { title: title, text: body });
           panel.add(tab);
           panel.setActiveTab(tab);
+        },
+        itemcontextmenu: function(view, record, item, index, event) {
+          console.log('itemcontextmenu, record: ', record);
+
+          var x = event.browserEvent.clientX;
+          var y = event.browserEvent.clientY;
+          var menu = new Rwiki.view.TreeNodeMenu();
+          menu.showAt([x, y]);
+
+          event.stopEvent();
         }
       }
     });
