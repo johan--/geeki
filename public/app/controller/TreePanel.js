@@ -23,7 +23,9 @@ Ext.define('Rwiki.controller.TreePanel', {
 
           var panel = this.getTabPanel();
           var title = record.data.text;
-          var tab = Ext.create('Ext.tab.Tab', { title: title, text: 'This is a content for: ' + title })
+          var body = record.data.body;
+
+          var tab = Ext.create('Ext.tab.Tab', { title: title, text: body });
           panel.add(tab);
           panel.setActiveTab(tab);
         }
