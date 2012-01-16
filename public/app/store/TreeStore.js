@@ -12,9 +12,6 @@ Ext.define('Rwiki.store.TreeStore', {
     reader: {
       type: 'json'
     }
-  },
-  root: {
-    expanded: true
   }
 });
 

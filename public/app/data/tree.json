@@ -1,4 +1,4 @@
-{
+[{
   id: 1,
   text: 'Home page',
   body: 'The home page content',
@@ -14,5 +14,5 @@
     body: 'The other page content',
     leaf: true
   }]
-}
+}]
 
