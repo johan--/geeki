@@ -1,6 +1,7 @@
 Ext.define('Rwiki.controller.TreePanel', {
   extend: 'Ext.app.Controller',
   requires: [
+    'Rwiki.view.PageTab',
     'Rwiki.view.TreeNodeMenu'
   ],
 
@@ -31,10 +32,7 @@ Ext.define('Rwiki.controller.TreePanel', {
     console.log('select rowModel: ', rowModel, ', record:', record, ', index:', index, ', opts:', opts);
 
     var panel = this.getTabPanel();
-    var title = record.data.text;
-    var body = record.data.body;
-
-    var tab = Ext.create('Ext.tab.Tab', { title: title, text: body });
+    var tab = Ext.create('Rwiki.view.PageTab', { pageRecord: record });
     panel.add(tab);
     panel.setActiveTab(tab);
   },
