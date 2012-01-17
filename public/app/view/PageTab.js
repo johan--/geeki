@@ -1,5 +1,6 @@
 Ext.define('Rwiki.view.PageTab', {
   extend: 'Ext.tab.Tab',
+  alias: 'widget.rwikiPageTab',
 
   constructor: function(options) {
     this.pageRecord = options.pageRecord;

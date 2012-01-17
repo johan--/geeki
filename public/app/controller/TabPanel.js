@@ -2,18 +2,29 @@ Ext.define('Rwiki.controller.TabPanel', {
   extend: 'Ext.app.Controller',
 
   views: [
-    'TabPanel'
+    'TabPanel',
+    'TreePanel'
   ],
 
   refs: [{
     ref: 'tabPanel',
     selector: 'rwikiTabPanel'
+  }, {
+    ref: 'treePanel',
+    selector: 'rwikiTreePanel'
   }],
 
-  createTab: function(name, content) {
-    console.log('Creating a new tab (name: ', name, ', content: ', content, ')');
+  init: function() {
+    console.log('Initialize Rwiki.controller.TabPanel');
 
-    var tab = this.getTabPanel();
-    console.log(tab);
+    this.control({
+      rwikiTabPanel: {
+        tabchange: function(tabPanel, tab, oldTab) {
+          console.log('tabchange tab:', tab, ', oldTab:', oldTab);
+          var treePanel = this.getTreePanel();
+          treePanel.getSelectionModel().select(tab.getPageRecord());
+        }
+      }
+    });
   }
 });
