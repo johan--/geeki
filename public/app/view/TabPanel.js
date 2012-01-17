@@ -3,5 +3,11 @@ Ext.define('Rwiki.view.TabPanel', {
   alias: 'widget.rwikiTabPanel',
 
   title: 'Rwiki TabPanel',
-  items: []
+  items: [],
+
+  findPageTabById: function(id) {
+    return this.items.findBy(function(tab) {
+      return tab.getPageRecord().getId() === id;
+    });
+  }
 });

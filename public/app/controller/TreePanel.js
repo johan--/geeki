@@ -32,8 +32,11 @@ Ext.define('Rwiki.controller.TreePanel', {
     console.log('select rowModel: ', rowModel, ', record:', record, ', index:', index, ', opts:', opts);
 
     var panel = this.getTabPanel();
-    var tab = Ext.create('Rwiki.view.PageTab', { pageRecord: record });
-    panel.add(tab);
+    var tab = panel.findPageTabById(record.getId());
+    if (tab === null) {
+      tab = Ext.create('Rwiki.view.PageTab', { pageRecord: record });
+      panel.add(tab);
+    }
     panel.setActiveTab(tab);
   },
 
