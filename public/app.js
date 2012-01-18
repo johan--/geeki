@@ -12,7 +12,8 @@ Ext.application({
     'TreePanel',
     'TreeNodeMenu',
     'TabPanel',
-    'PageTab'
+    'PageTab',
+    'Toolbar'
   ],
 
   models: ['Page'],

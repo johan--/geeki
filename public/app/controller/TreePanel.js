@@ -39,6 +39,9 @@ Ext.define('Rwiki.controller.TreePanel', {
     var id = record.getId();
     Rwiki.model.Page.load(id, {
       success: function(page) {
+        Rwiki.logMethodCall('Page#load', arguments);
+
+        Rwiki.model.Page.setCurrentPage(page);
 
         var panel = self.getTabPanel();
         var tab = panel.findPageTabById(id);

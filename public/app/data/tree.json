@@ -6,7 +6,12 @@
   children: [{
     id: 2,
     text: 'Page one',
-    leaf: true
+    leaf: false,
+    children: [{
+      id: 21,
+      text: 'Subpage',
+      leaf: true
+    }]
   }, {
     id: 3,
     text: 'Page two',
