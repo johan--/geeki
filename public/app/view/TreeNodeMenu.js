@@ -4,15 +4,19 @@ Ext.define('Rwiki.view.TreeNodeMenu', {
 
   items: [{
     id: 'create',
-    text: 'Create a new page'
+    text: 'Create page',
+    iconCls: 'icon-add-page'
   }, '-', {
     id: 'edit',
-    text: 'Edit page'
+    text: 'Edit page',
+    iconCls: 'icon-edit'
   }, {
     id: 'rename',
-    text: 'Rename page'
+    text: 'Rename page',
+    iconCls: 'icon-rename-page'
   }, {
     id: 'delete',
-    text: 'Delete page'
+    text: 'Delete page',
+    iconCls: 'icon-delete-page'
   }]
 });
