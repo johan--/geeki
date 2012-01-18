@@ -1,5 +1,8 @@
 Ext.define('Rwiki.controller.TabPanel', {
   extend: 'Ext.app.Controller',
+  requires: [
+    'Rwiki.view.PageTab'
+  ],
 
   views: [
     'TabPanel',

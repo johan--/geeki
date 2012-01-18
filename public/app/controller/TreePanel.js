@@ -1,7 +1,6 @@
 Ext.define('Rwiki.controller.TreePanel', {
   extend: 'Ext.app.Controller',
   requires: [
-    'Rwiki.view.PageTab',
     'Rwiki.view.TreeNodeMenu'
   ],
 
@@ -14,23 +13,23 @@ Ext.define('Rwiki.controller.TreePanel', {
   ],
 
   refs: [{
-    ref: 'treePanel',
-    selector: 'rwikiTreePanel'
+    selector: 'rwikiTreePanel',
+    ref: 'treePanel'
   }, {
-    ref: 'tabPanel',
-    selector: 'rwikiTabPanel'
+    selector: 'rwikiTabPanel',
+    ref: 'tabPanel'
   }],
 
   init: function() {
     console.log('Initialize Rwiki.controller.TreePanel');
 
     this.control({
-      'tabPanel': {
+      rwikiTreePanel: {
         render: function() {
           console.log('rwikiTreePanel was rendered');
         },
-        select: this.onNodeSelect,
-        itemcontextmenu: this.onNodeContextMenu
+        select: this._onNodeSelect,
+        itemcontextmenu: this._onNodeContextMenu
       }
     });
   },
@@ -44,7 +43,7 @@ Ext.define('Rwiki.controller.TreePanel', {
     });
   },
 
-  onNodeSelect: function(rowModel, record, index, opts) {
+  _onNodeSelect: function(rowModel, record, index, opts) {
     console.log('select rowModel: ', rowModel, ', record:', record, ', index:', index, ', opts:', opts);
 
     var panel = this.getTabPanel();
@@ -56,14 +55,22 @@ Ext.define('Rwiki.controller.TreePanel', {
     panel.setActiveTab(tab);
   },
 
-  onNodeContextMenu: function(view, record, item, index, event) {
+  _onNodeContextMenu: function(view, record, item, index, event) {
     console.log('itemcontextmenu, record: ', record);
 
-    var x = event.browserEvent.clientX;
-    var y = event.browserEvent.clientY;
-    this.contextMenu =  this.contextMenu || Ext.create('Rwiki.view.TreeNodeMenu');
-    this.contextMenu.showAt([x, y]);
+    // set the context menu record
+    var menuController = this.getController('TreeNodeMenu');
+    menuController.setPageRecord(record);
+
+    // display the context menu
+    var menu = this._getContextMenu();
+    menu.showAt(event.getXY());
 
     event.stopEvent();
+  },
+
+  _getContextMenu: function() {
+    this._contextMenu = this._contextMenu || Ext.create('Rwiki.view.TreeNodeMenu');
+    return this._contextMenu;
   }
 });
