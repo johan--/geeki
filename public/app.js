@@ -9,7 +9,7 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
-  appFolder: 'app',
+  appFolder: '/app',
   name: 'Rwiki',
 
   controllers: [
@@ -20,8 +20,8 @@ Ext.application({
     'Toolbar'
   ],
 
-  models: ['Page'],
-  stores: ['Tree'],
+  models: ['PageNode', 'Page'],
+  stores: ['PageNodes', 'Pages'],
 
   autoCreateViewport: true,
 

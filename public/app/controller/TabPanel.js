@@ -26,6 +26,9 @@ Ext.define('Rwiki.controller.TabPanel', {
           Rwiki.logMethodCall('TabPanel#tabchange', arguments);
           var treePanel = this.getTreePanel();
           treePanel.getSelectionModel().select(tab.getPageRecord());
+        },
+        add: function(tabPanel, tab) {
+          Rwiki.logMethodCall('TabPanel#add', arguments);
         }
       }
     });

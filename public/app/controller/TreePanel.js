@@ -9,7 +9,7 @@ Ext.define('Rwiki.controller.TreePanel', {
   ],
 
   stores: [
-    'Tree',
+    'PageNodes',
     'Pages'
   ],
 
@@ -40,6 +40,7 @@ Ext.define('Rwiki.controller.TreePanel', {
     Rwiki.model.Page.load(id, {
       success: function(page) {
         Rwiki.logMethodCall('Page#load', arguments);
+        self.application.fireEvent('rwiki:pageLoaded', page);
 
         Rwiki.model.Page.setCurrentPage(page);
 

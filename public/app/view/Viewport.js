@@ -3,7 +3,11 @@ Ext.define('Rwiki.view.Viewport', {
 
   requires: [
     'Rwiki.view.TabPanel',
-    'Rwiki.view.TreePanel'
+    'Rwiki.view.PageTab',
+    'Rwiki.view.Toolbar',
+
+    'Rwiki.view.TreePanel',
+    'Rwiki.view.TreeNodeMenu'
   ],
 
   layout: 'border',
