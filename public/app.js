@@ -10,7 +10,7 @@ Ext.application({
   ],
 
   models: ['Page'],
-  stores: ['TreeStore'],
+  stores: ['Tree'],
 
   autoCreateViewport: true
 });

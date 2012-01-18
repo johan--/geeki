@@ -9,7 +9,14 @@ Ext.define('Rwiki.controller.TreePanel', {
     'TreePanel'
   ],
 
+  stores: [
+    'Tree'
+  ],
+
   refs: [{
+    ref: 'treePanel',
+    selector: 'rwikiTreePanel'
+  }, {
     ref: 'tabPanel',
     selector: 'rwikiTabPanel'
   }],
@@ -24,6 +31,15 @@ Ext.define('Rwiki.controller.TreePanel', {
         },
         select: this.onNodeSelect,
         itemcontextmenu: this.onNodeContextMenu
+      }
+    });
+  },
+
+  onLaunch: function() {
+    var store = this.getTreeStore();
+    store.load({
+      callback: function() {
+        console.log('Tree nodes were loaded!')
       }
     });
   },

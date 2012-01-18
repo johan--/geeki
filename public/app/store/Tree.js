@@ -1,4 +1,4 @@
-Ext.define('Rwiki.store.TreeStore', {
+Ext.define('Rwiki.store.Tree', {
   extend: 'Ext.data.TreeStore',
   requires: [
     'Rwiki.model.Page'
