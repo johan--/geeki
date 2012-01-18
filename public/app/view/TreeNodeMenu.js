@@ -1,7 +1,5 @@
 Ext.define('Rwiki.view.TreeNodeMenu', {
   extend: 'Ext.menu.Menu',
-  requires: ['Rwiki.action.CreateNode'],
-
   alias: 'widget.rwikiTreeNodeMenu',
 
   items: [{
