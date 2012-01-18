@@ -18,7 +18,7 @@ Ext.define('Rwiki.controller.TreePanel', {
     console.log('Initialize Rwiki.controller.TreePanel');
 
     this.control({
-      'rwikiTreePanel': {
+      'tabPanel': {
         render: function() {
           console.log('rwikiTreePanel was rendered');
         },
