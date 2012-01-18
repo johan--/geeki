@@ -1,10 +1,10 @@
 Ext.define('Rwiki.store.Tree', {
   extend: 'Ext.data.TreeStore',
   requires: [
-    'Rwiki.model.Page'
+    'Rwiki.model.PageNode'
   ],
 
-  model: 'Rwiki.model.Page',
+  model: 'Rwiki.model.PageNode',
   autoLoad: true,
   proxy: {
     type: 'ajax',

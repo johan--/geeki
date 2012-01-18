@@ -1,4 +1,4 @@
-Ext.define('Rwiki.model.Page', {
+Ext.define('Rwiki.model.PageNode', {
   extend: 'Ext.data.Model',
   fields: ['id', 'text', 'body']
 });
