@@ -13,27 +13,27 @@ Ext.define('Rwiki.controller.TreeNodeMenu', {
   pageRecord: null,
 
   init: function() {
-    console.log('Initialize Rwiki.controller.TreeNodeMenu');
+    Rwiki.logMethodCall('TreeNodeMenu#init', arguments);
 
     this.control({
       'menu #create': {
         click: function() {
-          console.log('Create clicked, page: ', this.pageRecord);
+          Rwiki.logMethodCall('TreeNodeMenu#create', arguments);
         }
       },
       'menu #edit': {
         click: function() {
-          console.log('Edit clicked, page: ', this.pageRecord);
+          Rwiki.logMethodCall('TreeNodeMenu#edit', arguments);
         }
       },
       'menu #rename': {
         click: function() {
-          console.log('Rename clicked, page: ', this.pageRecord);
+          Rwiki.logMethodCall('TreeNodeMenu#rename', arguments);
         }
       },
       'menu #delete': {
         click: function() {
-          console.log('Delete clicked, page: ', this.pageRecord);
+          Rwiki.logMethodCall('TreeNodeMenu#delete', arguments);
         }
       }
     });

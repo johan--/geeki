@@ -2,7 +2,7 @@ Ext.define('Rwiki.controller.PageTab', {
   extend: 'Ext.app.Controller',
 
   views: [
-    'PageTab',
+    'PageTab'
   ],
 
   refs: [{
@@ -14,10 +14,10 @@ Ext.define('Rwiki.controller.PageTab', {
     this.control({
       tab: {
         show: function(tab) {
-          console.log('show tab: ', tab);
+          Rwiki.logMethodCall('PageTab#show', arguments);
         },
         close: function(tab) {
-          console.log('closing tab: ', tab);
+          Rwiki.logMethodCall('PageTab#close', arguments);
         }
       }
     });

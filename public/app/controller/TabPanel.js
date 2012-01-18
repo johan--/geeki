@@ -18,12 +18,12 @@ Ext.define('Rwiki.controller.TabPanel', {
   }],
 
   init: function() {
-    console.log('Initialize Rwiki.controller.TabPanel');
+    Rwiki.logMethodCall('TabPanel#init', arguments);
 
     this.control({
       rwikiTabPanel: {
         tabchange: function(tabPanel, tab, oldTab) {
-          console.log('tabchange tab:', tab, ', oldTab:', oldTab);
+          Rwiki.logMethodCall('TabPanel#tabchange', arguments);
           var treePanel = this.getTreePanel();
           treePanel.getSelectionModel().select(tab.getPageRecord());
         }

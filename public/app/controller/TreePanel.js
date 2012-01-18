@@ -21,13 +21,10 @@ Ext.define('Rwiki.controller.TreePanel', {
   }],
 
   init: function() {
-    console.log('Initialize Rwiki.controller.TreePanel');
+    Rwiki.logMethodCall('TreePanel#init', arguments);
 
     this.control({
       rwikiTreePanel: {
-        render: function() {
-          console.log('rwikiTreePanel was rendered');
-        },
         select: this._onNodeSelect,
         itemcontextmenu: this._onNodeContextMenu
       }
@@ -38,13 +35,13 @@ Ext.define('Rwiki.controller.TreePanel', {
     var store = this.getTreeStore();
     store.load({
       callback: function() {
-        console.log('Tree nodes were loaded!')
+        Rwiki.logMethodCall('TreeStore#load', arguments);
       }
     });
   },
 
   _onNodeSelect: function(rowModel, record, index, opts) {
-    console.log('select rowModel: ', rowModel, ', record:', record, ', index:', index, ', opts:', opts);
+    Rwiki.logMethodCall('TreePanel#_onNodeSelect', arguments);
 
     var panel = this.getTabPanel();
     var tab = panel.findPageTabById(record.getId());
@@ -56,7 +53,7 @@ Ext.define('Rwiki.controller.TreePanel', {
   },
 
   _onNodeContextMenu: function(view, record, item, index, event) {
-    console.log('itemcontextmenu, record: ', record);
+    Rwiki.logMethodCall('TreePanel#_onNodeContextMenu', arguments);
 
     // set the context menu record
     var menuController = this.getController('TreeNodeMenu');
