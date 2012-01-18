@@ -1,4 +1,7 @@
 Ext.define('Rwiki.model.PageNode', {
   extend: 'Ext.data.Model',
-  fields: ['id', 'text']
+  fields: [
+    { name: 'id', type: 'int' },
+    { name: 'text', type: 'string' }
+  ]
 });

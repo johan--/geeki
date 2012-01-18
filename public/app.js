@@ -4,6 +4,10 @@ window.Rwiki = {
   }
 };
 
+Ext.Loader.setConfig({
+  enabled: true
+});
+
 Ext.application({
   appFolder: 'app',
   name: 'Rwiki',
@@ -19,5 +23,12 @@ Ext.application({
   models: ['Page'],
   stores: ['Tree'],
 
-  autoCreateViewport: true
+  autoCreateViewport: true,
+
+  launch: function() {
+    console.log('Initialize the application..');
+    this.on('rwiki:tabClose', function(tab) {
+      console.log('closing...', tab);
+    });
+  }
 });

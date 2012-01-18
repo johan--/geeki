@@ -18,6 +18,7 @@ Ext.define('Rwiki.controller.PageTab', {
         },
         close: function(tab) {
           Rwiki.logMethodCall('PageTab#close', arguments);
+          this.application.fireEvent('rwiki:tabClose', tab);
         }
       }
     });
