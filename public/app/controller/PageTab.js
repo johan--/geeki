@@ -12,7 +12,7 @@ Ext.define('Rwiki.controller.PageTab', {
 
   init: function() {
     this.control({
-      tab: {
+      rwikiPageTab: {
         show: function(tab) {
           Rwiki.logMethodCall('PageTab#show', arguments);
         },
