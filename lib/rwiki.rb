@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'erb'
+require 'json'
 
 module Rwiki
   autoload :App, 'rwiki/app'
@@ -12,4 +13,3 @@ module Rwiki
   end
 
 end
-

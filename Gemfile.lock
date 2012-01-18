@@ -10,6 +10,7 @@ GEM
       bundler (~> 1.0)
       git (>= 1.2.5)
       rake
+    json_pure (1.6.5)
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
     method_source (0.6.7)
@@ -51,6 +52,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   jeweler
+  json_pure
   pry
   ruby-debug19
   shotgun

@@ -24,5 +24,12 @@ module Rwiki
       erb :index
     end
 
+    get '/pages/:page_id.json', :provides => :json do
+      @id = params[:page_id]
+
+      page = { :id => @id, :text => "Page ##{@id}", :body => "Body for the Page ##{@id}, time: #{Time.new}" }
+      page.to_json
+    end
+
   end
 end

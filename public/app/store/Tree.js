@@ -7,10 +7,7 @@ Ext.define('Rwiki.store.Tree', {
   model: 'Rwiki.model.PageNode',
   autoLoad: true,
   proxy: {
-    type: 'ajax',
     url: 'app/data/tree.json',
-    reader: {
-      type: 'json'
-    }
+    type: 'ajax'
   }
 });
