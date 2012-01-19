@@ -18,6 +18,10 @@
 #
 #= require_self
 
+window.RwikiEvent =
+  createPage: 'rwiki:createPage'
+  editPage: 'rwiki:editPage'
+
 Ext.Loader.setConfig
   enabled: false
 
@@ -47,12 +51,15 @@ Ext.application
     @on 'rwiki:tabClose', (tab) ->
       console.log("on rwiki:tabClose", arguments)
 
-    @on 'rwiki:editPage', (page) ->
-      console.log('on rwiki:editPage', arguments)
+    @on RwikiEvent.editPage, (page) ->
+      console.log("on #{RwikiEvent.editPage}", arguments)
 
-      @editorWindow ||= Ext.create('Rwiki.view.EditorWindow')
-      @editorWindow.setPage(page)
-      @editorWindow.show()
+      id = page.getId()
+      Rwiki.model.Page.load id,
+        success: (page) ->
+          @editorWindow ||= Ext.create('Rwiki.view.EditorWindow')
+          @editorWindow.setPage(page)
+          @editorWindow.show()
 
-    @on 'rwiki:createPage', (parentPageNode) ->
-      console.log("on rwiki:createPage", arguments)
+    @on RwikiEvent.createPage, (parentPageNode) ->
+      console.log("on #{RwikiEvent.createPage}", arguments)

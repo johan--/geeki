@@ -18,4 +18,4 @@ Ext.define 'Rwiki.controller.tab.Toolbar',
       'rwikiToolbar #edit-page':
         click: (button, event) ->
           page = @getToolbar().getPage()
-          @application.fireEvent('rwiki:editPage', page)
+          @application.fireEvent(RwikiEvent.editPage, page)

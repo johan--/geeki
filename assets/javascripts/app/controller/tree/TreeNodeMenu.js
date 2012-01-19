@@ -17,12 +17,12 @@ Ext.define('Rwiki.controller.tree.TreeNodeMenu', {
       'menu #create': {
         click: function() {
           console.log('TreeNodeMenu#create', arguments);
-          this.application.fireEvent('rwiki:createPage', this.getPageNode());
+          this.application.fireEvent(RwikiEvent.createPage, this.getPageNode());
         }
       },
       'menu #edit': {
         click: function() {
-          console.log('TreeNodeMenu#edit', arguments);
+          this.application.fireEvent(RwikiEvent.editPage, this.getPageNode());
         }
       },
       'menu #rename': {
