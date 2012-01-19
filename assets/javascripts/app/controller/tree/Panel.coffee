@@ -1,8 +1,8 @@
-Ext.define 'Rwiki.controller.tree.TreePanel',
+Ext.define 'Rwiki.controller.tree.Panel',
   extend: 'Ext.app.Controller'
 
   views: [
-    'tree.TreePanel'
+    'tree.Panel'
   ]
 
   stores: [
@@ -54,4 +54,4 @@ Ext.define 'Rwiki.controller.tree.TreePanel',
     event.stopEvent()
 
   _getContextMenu: ->
-    @_contextMenu ||= Ext.create('Rwiki.view.tree.TreeNodeMenu')
+    @_contextMenu ||= Ext.create('Rwiki.view.tree.ContextMenu')

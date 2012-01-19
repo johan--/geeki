@@ -3,9 +3,9 @@ Ext.define 'Rwiki.view.Viewport',
 
   layout: 'border'
   items: [
-    Ext.create 'Rwiki.view.tree.TreePanel',
+    Ext.create 'Rwiki.view.tree.Panel',
       region: 'west'
 
-    Ext.create 'Rwiki.view.tab.TabPanel',
+    Ext.create 'Rwiki.view.tab.Panel',
       region: 'center'
   ]

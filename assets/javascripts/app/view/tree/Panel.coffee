@@ -1,4 +1,4 @@
-Ext.define 'Rwiki.view.tree.TreePanel',
+Ext.define 'Rwiki.view.tree.Panel',
   extend: 'Ext.tree.Panel'
   alias: 'widget.rwikiTreePanel'
 

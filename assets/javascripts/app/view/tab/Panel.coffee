@@ -1,4 +1,4 @@
-Ext.define 'Rwiki.view.tab.TabPanel',
+Ext.define 'Rwiki.view.tab.Panel',
   extend: 'Ext.tab.Panel'
   alias: 'widget.rwikiTabPanel'
 

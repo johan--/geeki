@@ -1,9 +1,9 @@
-Ext.define 'Rwiki.controller.tab.TabPanel',
+Ext.define 'Rwiki.controller.tab.Panel',
   extend: 'Ext.app.Controller'
 
   views: [
-    'tree.TreePanel'
-    'tab.TabPanel'
+    'tree.Panel'
+    'tab.Panel'
   ],
 
   refs: [

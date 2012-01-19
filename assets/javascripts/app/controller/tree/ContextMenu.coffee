@@ -1,13 +1,13 @@
-Ext.define 'Rwiki.controller.tree.TreeNodeMenu',
+Ext.define 'Rwiki.controller.tree.ContextMenu',
   extend: 'Ext.app.Controller'
 
   views: [
-    'tree.TreeNodeMenu'
+    'tree.ContextMenu'
   ]
 
   refs: [
     ref: 'menu'
-    selector: 'rwikiTreeNodeMenu'
+    selector: 'rwikiTreeContextMenu'
   ]
 
   init: ->

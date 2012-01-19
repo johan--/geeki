@@ -1,6 +1,6 @@
-Ext.define 'Rwiki.view.tree.TreeNodeMenu',
+Ext.define 'Rwiki.view.tree.ContextMenu',
   extend: 'Ext.menu.Menu'
-  alias: 'widget.rwikiTreeNodeMenu'
+  alias: 'widget.rwikiTreeContextMenu'
 
   pageNode: null
 
