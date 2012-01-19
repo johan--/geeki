@@ -1,18 +1,12 @@
 module Rwiki
-  module AssetHelpers
-    def asset_path(source)
-      "/assets/" + settings.sprockets.find_asset(source).digest_path
-    end
-  end
-
   class App < Sinatra::Base
-
     set :root, File.join(File.dirname(__FILE__), '../..')
     set :app_file, File.join(File.dirname(__FILE__), '../../..')
 
     set :sprockets, Sprockets::Environment.new(root)
     set :precompile,    [ /\w+\.(?!js|css).+/, /application.(css|js)$/ ]
-    set :assets_prefix, 'assets'
+    set :assets_prefix, '/assets'
+    set :digest_assets, false
     set :assets_path, File.join(root, 'public', assets_prefix)
 
     disable :show_exceptions
@@ -20,11 +14,16 @@ module Rwiki
     enable :logging
 
     configure do
-      sprockets.append_path(File.join(root, 'assets', 'stylesheets'))
-      sprockets.append_path(File.join(root, 'assets', 'javascripts'))
+      # Setup Sprockets
+      sprockets.append_path File.join(root, 'assets', 'stylesheets')
+      sprockets.append_path File.join(root, 'assets', 'javascripts')
 
-      sprockets.context_class.instance_eval do
-        include AssetHelpers
+      # Configure Sprockets::Helpers (if necessary)
+      Sprockets::Helpers.configure do |config|
+        config.environment = sprockets
+        config.prefix      = assets_prefix
+        config.digest      = digest_assets
+        config.public_path = public_folder
       end
 
       Dir.mkdir('log') unless File.exists?('log')
@@ -39,7 +38,7 @@ module Rwiki
     end
 
     helpers do
-      include AssetHelpers
+      include Sprockets::Helpers
     end
 
     get '/' do
