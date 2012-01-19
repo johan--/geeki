@@ -8,7 +8,7 @@ Ext.define 'Rwiki.controller.tab.PageTab',
   refs: [
     ref: 'tab',
     selector: 'rwikiPageTab'
-  ],
+  ]
 
   init: ->
     @control

@@ -32,6 +32,8 @@ Ext.application
     'tab.TabPanel'
     'tab.PageTab'
     'tab.Toolbar'
+
+    'EditorWindow'
   ]
 
   stores: ['PageNodes', 'Pages']
@@ -48,8 +50,8 @@ Ext.application
     @on 'rwiki:editPage', (page) ->
       console.log('on rwiki:editPage', arguments)
 
-      win = Ext.create('Rwiki.view.EditorWindow')
-      win.show()
+      @editorWindow ||= Ext.create('Rwiki.view.EditorWindow')
+      @editorWindow.show()
 
     @on 'rwiki:createPage', (parentPageNode) ->
       console.log("on rwiki:createPage", arguments)
