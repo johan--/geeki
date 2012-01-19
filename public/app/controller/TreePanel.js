@@ -47,7 +47,7 @@ Ext.define('Rwiki.controller.TreePanel', {
         var panel = self.getTabPanel();
         var tab = panel.findPageTabById(id);
         if (tab === null) {
-          tab = Ext.create('Rwiki.view.PageTab', { pageRecord: page });
+          tab = Ext.create('Rwiki.view.PageTab', { page: page });
           panel.add(tab);
         }
         panel.setActiveTab(tab);

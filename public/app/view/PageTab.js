@@ -2,16 +2,18 @@ Ext.define('Rwiki.view.PageTab', {
   extend: 'Ext.tab.Tab',
   alias: 'widget.rwikiPageTab',
 
-  constructor: function(options) {
-    this.pageRecord = options.pageRecord;
+  page: null,
 
-    options.title = this.pageRecord.get('text');
-    options.text = this.pageRecord.get('body');
+  constructor: function(options) {
+    this.page = options.page;
+
+    options.title = this.page.get('text');
+    options.text = this.page.get('body');
 
     this.callParent([options]);
   },
 
-  getPageRecord: function() {
-    return this.pageRecord;
+  getPage: function() {
+    return this.page;
   }
 });
