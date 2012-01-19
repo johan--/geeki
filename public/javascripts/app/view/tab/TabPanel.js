@@ -1,17 +1,13 @@
-Ext.define('Rwiki.view.TabPanel', {
+Ext.define('Rwiki.view.tab.TabPanel', {
   extend: 'Ext.tab.Panel',
   alias: 'widget.rwikiTabPanel',
 
-  requires: [
-    'Rwiki.view.Toolbar'
-  ],
-
-  tbar: Ext.create('Rwiki.view.Toolbar'),
+  tbar: Ext.create('Rwiki.view.tab.Toolbar'),
   items: [],
 
   findPageTabById: function(id) {
     return this.items.findBy(function(tab) {
-      return tab.getPageRecord().getId() === id;
+      return tab.getPage().getId() === id;
     });
   },
 

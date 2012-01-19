@@ -1,12 +1,9 @@
-Ext.define('Rwiki.controller.TabPanel', {
+Ext.define('Rwiki.controller.tab.TabPanel', {
   extend: 'Ext.app.Controller',
-  requires: [
-    'Rwiki.view.PageTab'
-  ],
 
   views: [
-    'TabPanel',
-    'TreePanel'
+    'tree.TreePanel',
+    'tab.TabPanel'
   ],
 
   refs: [{
@@ -25,7 +22,7 @@ Ext.define('Rwiki.controller.TabPanel', {
         tabchange: function(tabPanel, tab, oldTab) {
           console.log('TabPanel#tabchange', arguments);
           var treePanel = this.getTreePanel();
-          treePanel.getSelectionModel().select(tab.getPageRecord());
+          treePanel.getSelectionModel().select(tab.getPage());
         },
         add: function(tabPanel, tab) {
           console.log('TabPanel#add', arguments);

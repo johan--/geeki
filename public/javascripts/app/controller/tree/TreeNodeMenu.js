@@ -1,8 +1,8 @@
-Ext.define('Rwiki.controller.TreeNodeMenu', {
+Ext.define('Rwiki.controller.tree.TreeNodeMenu', {
   extend: 'Ext.app.Controller',
 
   views: [
-    'TreeNodeMenu'
+    'tree.TreeNodeMenu'
   ],
 
   refs: [{

@@ -1,8 +1,8 @@
-Ext.define('Rwiki.controller.Toolbar', {
+Ext.define('Rwiki.controller.tab.Toolbar', {
   extend: 'Ext.app.Controller',
 
   views: [
-    'Toolbar'
+    'tab.Toolbar'
   ],
 
   refs: [{

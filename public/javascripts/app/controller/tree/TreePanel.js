@@ -1,11 +1,8 @@
-Ext.define('Rwiki.controller.TreePanel', {
+Ext.define('Rwiki.controller.tree.TreePanel', {
   extend: 'Ext.app.Controller',
-  requires: [
-    'Rwiki.view.TreeNodeMenu'
-  ],
 
   views: [
-    'TreePanel'
+    'tree.TreePanel'
   ],
 
   stores: [
@@ -47,7 +44,7 @@ Ext.define('Rwiki.controller.TreePanel', {
         var panel = self.getTabPanel();
         var tab = panel.findPageTabById(id);
         if (tab === null) {
-          tab = Ext.create('Rwiki.view.PageTab', { page: page });
+          tab = Ext.create('Rwiki.view.tab.PageTab', { page: page });
           panel.add(tab);
         }
         panel.setActiveTab(tab);
@@ -66,7 +63,7 @@ Ext.define('Rwiki.controller.TreePanel', {
   },
 
   _getContextMenu: function() {
-    this._contextMenu = this._contextMenu || Ext.create('Rwiki.view.TreeNodeMenu');
+    this._contextMenu = this._contextMenu || Ext.create('Rwiki.view.tree.TreeNodeMenu');
     return this._contextMenu;
   }
 });

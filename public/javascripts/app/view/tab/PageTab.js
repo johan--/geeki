@@ -1,4 +1,4 @@
-Ext.define('Rwiki.view.PageTab', {
+Ext.define('Rwiki.view.tab.PageTab', {
   extend: 'Ext.tab.Tab',
   alias: 'widget.rwikiPageTab',
 

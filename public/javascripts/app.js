@@ -3,19 +3,29 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
-  appFolder: '/app',
+  appFolder: '/javascripts/app',
   name: 'Rwiki',
 
-  controllers: [
-    'TreePanel',
-    'TreeNodeMenu',
-    'TabPanel',
-    'PageTab',
-    'Toolbar'
+  requires: [
+    'Rwiki.controller.tree.TreePanel',
+//    'Rwiki.controller.tree.TreeNodeMenu',
+//
+//    'Rwiki.controller.tab.TabPanel',
+//    'Rwiki.controller.tab.PageTab',
+//    'Rwiki.controller.tab.Toolbar'
   ],
 
-  models: ['PageNode', 'Page'],
+  controllers: [
+    'tree.TreePanel',
+    'tree.TreeNodeMenu',
+
+    'tab.TabPanel',
+    'tab.PageTab',
+    'tab.Toolbar'
+  ],
+
   stores: ['PageNodes', 'Pages'],
+  models: ['PageNode', 'Page'],
 
   autoCreateViewport: true,
 

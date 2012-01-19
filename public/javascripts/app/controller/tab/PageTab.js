@@ -1,8 +1,8 @@
-Ext.define('Rwiki.controller.PageTab', {
+Ext.define('Rwiki.controller.tab.PageTab', {
   extend: 'Ext.app.Controller',
 
   views: [
-    'PageTab'
+    'tab.PageTab'
   ],
 
   refs: [{

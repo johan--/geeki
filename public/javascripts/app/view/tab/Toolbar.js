@@ -1,6 +1,6 @@
-Ext.define('Rwiki.view.Toolbar', {
+Ext.define('Rwiki.view.tab.Toolbar', {
   extend: 'Ext.toolbar.Toolbar',
-    alias: 'widget.rwikiToolbar',
+  alias: 'widget.rwikiToolbar',
 
   page: null,
 

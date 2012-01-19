@@ -1,4 +1,4 @@
-Ext.define('Rwiki.view.TreeNodeMenu', {
+Ext.define('Rwiki.view.tree.TreeNodeMenu', {
   extend: 'Ext.menu.Menu',
   alias: 'widget.rwikiTreeNodeMenu',
 
