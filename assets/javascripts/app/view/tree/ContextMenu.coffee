@@ -33,7 +33,7 @@ Ext.define 'Rwiki.view.tree.ContextMenu',
       @deleteMenuItem
     ]
 
-    @callParent(options)
+    @callParent([options])
 
   showFor: (pageNode, xy) ->
     @setPageNode(pageNode)

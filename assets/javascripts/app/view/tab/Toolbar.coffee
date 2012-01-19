@@ -31,7 +31,7 @@ Ext.define 'Rwiki.view.tab.Toolbar',
         iconCls: 'icon-about'
       }]
 
-    @callParent(options);
+    @callParent([options])
 
   enablePageButtons: (enabled) ->
     @editPageButton.enable(enabled)

@@ -17,7 +17,7 @@ Ext.define 'Rwiki.view.EditorWindow',
       region: 'center'
     @items = [@htmlEditor]
 
-    @callParent(options)
+    @callParent([options])
 
   buttons: [
     Ext.create 'Ext.Button',
