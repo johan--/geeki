@@ -35,8 +35,6 @@ Ext.define 'Rwiki.controller.tree.Panel',
         console.log('Page#load', arguments)
         @application.fireEvent('rwiki:pageLoaded', page)
 
-        Rwiki.model.Page.setCurrentPage(page)
-
         panel = @getTabPanel()
         tab = panel.findPageTabById(id)
         if (tab == null)
