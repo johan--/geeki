@@ -6,6 +6,13 @@ Ext.define 'Rwiki.view.tree.Panel',
   width: 300
   collapsible: true
   resizable: true
-  store: Ext.create 'Rwiki.store.PageNodes'
+  store: Ext.create('Rwiki.store.PageNodes')
 
   rootVisible: false
+
+  findPageNodeById: (id) ->
+    @store.getNodeById(id)
+
+  selectNodeById: (id) ->
+    node = @findPageNodeById(id)
+    @getSelectionModel().select(node) if node

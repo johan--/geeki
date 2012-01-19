@@ -17,12 +17,12 @@ Ext.define 'Rwiki.controller.tab.Panel',
   init: ->
     console.log('TabPanel#init', arguments)
 
-    @control ->
+    @control
       rwikiTabPanel:
         tabchange: (tabPanel, tab, oldTab) ->
           console.log('TabPanel#tabchange', arguments)
-          treePanel = @getTreePanel();
-          treePanel.getSelectionModel().select(tab.getPage());
+          treePanel = @getTreePanel()
+          treePanel.selectNodeById(tab.getPage().getId())
 
         add: (tabPanel, tab) ->
           console.log('TabPanel#add', arguments)
