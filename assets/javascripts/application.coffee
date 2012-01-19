@@ -19,6 +19,7 @@
 #= require_self
 
 window.RwikiEvent =
+  pageClosed: 'rwiki:pageClosed'
   createPage: 'rwiki:createPage'
   editPage: 'rwiki:editPage'
 
@@ -48,8 +49,8 @@ Ext.application
   launch: ->
     console.log('Initialize the application..')
 
-    @on 'rwiki:tabClose', (tab) ->
-      console.log("on rwiki:tabClose", arguments)
+    @on RwikiEvent.pageClosed, (tab) ->
+      console.log("on #{RwikiEvent.pageClosed}", arguments)
 
     @on RwikiEvent.editPage, (page) ->
       console.log("on #{RwikiEvent.editPage}", arguments)

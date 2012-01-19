@@ -33,15 +33,15 @@ Ext.define 'Rwiki.view.tab.Toolbar',
 
     @callParent([options])
 
-  enablePageButtons: (enabled) ->
-    @editPageButton.enable(enabled)
-    @printPageButton.enable(enabled)
+  disablePageButtons: (disabled) ->
+    @editPageButton.setDisabled(disabled)
+    @printPageButton.setDisabled(disabled)
 
   setPage: (page) ->
     @page = page
 
-    enabled = @page != null
-    @enablePageButtons(enabled)
+    disabled = @page == null
+    @disablePageButtons(disabled)
 
   getPage: ->
     @page

@@ -16,6 +16,5 @@ Ext.define 'Rwiki.controller.tab.PageTab',
         show: (tab) ->
           console.log('PageTab#show', arguments)
 
-        close: (tab)->
-          console.log('PageTab#close', arguments)
-          @application.fireEvent('rwiki:tabClose', tab)
+        destroy: (tab)->
+          @application.fireEvent(RwikiEvent.pageClosed, tab)
