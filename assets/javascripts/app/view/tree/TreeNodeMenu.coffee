@@ -26,11 +26,11 @@ Ext.define 'Rwiki.view.tree.TreeNodeMenu',
       iconCls: 'icon-delete-page'
 
     @items = [
-      this.createMenuItem,
+      @createMenuItem,
       '-',
-      this.editMenuItem,
-      this.renameMenuItem,
-      this.deleteMenuItem
+      @editMenuItem,
+      @renameMenuItem,
+      @deleteMenuItem
     ]
 
     @callParent(options)

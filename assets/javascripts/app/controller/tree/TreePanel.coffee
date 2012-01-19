@@ -27,21 +27,20 @@ Ext.define 'Rwiki.controller.tree.TreePanel',
         itemcontextmenu: @_onNodeContextMenu
 
   _onNodeSelect: (rowModel, record, index, opts) ->
-    self = @
     console.log('TreePanel#_onNodeSelect', arguments)
 
     id = record.getId()
     Rwiki.model.Page.load id,
-      success: (page) ->
+      success: (page) =>
         console.log('Page#load', arguments)
-        self.application.fireEvent('rwiki:pageLoaded', page)
+        @application.fireEvent('rwiki:pageLoaded', page)
 
         Rwiki.model.Page.setCurrentPage(page)
 
-        panel = self.getTabPanel()
+        panel = @getTabPanel()
         tab = panel.findPageTabById(id)
         if (tab == null)
-          tab = Ext.create 'Rwiki.view.tab.PageTab', page: page
+          tab = Ext.create('Rwiki.view.tab.PageTab', page: page)
           panel.add(tab)
         panel.setActiveTab(tab)
 
@@ -49,7 +48,7 @@ Ext.define 'Rwiki.controller.tree.TreePanel',
     console.log('TreePanel#_onNodeContextMenu', arguments)
 
     # display the context menu
-    menu = this._getContextMenu()
+    menu = @_getContextMenu()
     menu.showFor(pageNode, event.getXY())
 
     event.stopEvent()
