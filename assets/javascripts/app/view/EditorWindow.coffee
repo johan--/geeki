@@ -12,10 +12,12 @@ Ext.define 'Rwiki.view.EditorWindow',
 
   layout: 'border'
 
-  items: [
-    Ext.create 'Ext.form.HtmlEditor',
+  constructor: (options) ->
+    @htmlEditor = Ext.create 'Ext.form.HtmlEditor',
       region: 'center'
-  ]
+    @items = [@htmlEditor]
+
+    @callParent(options)
 
   buttons: [
     Ext.create 'Ext.Button',
@@ -30,3 +32,7 @@ Ext.define 'Rwiki.view.EditorWindow',
       text: 'Cancel',
       id: 'cancel'
   ]
+
+  setPage: (page) ->
+    @page = page
+    @htmlEditor.setValue(@page.get('body'))

@@ -51,6 +51,7 @@ Ext.application
       console.log('on rwiki:editPage', arguments)
 
       @editorWindow ||= Ext.create('Rwiki.view.EditorWindow')
+      @editorWindow.setPage(page)
       @editorWindow.show()
 
     @on 'rwiki:createPage', (parentPageNode) ->
