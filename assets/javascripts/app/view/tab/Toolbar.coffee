@@ -18,18 +18,18 @@ Ext.define 'Rwiki.view.tab.Toolbar',
       disabled: true
 
     @items = [
-      @editPageButton,
+      @editPageButton
       @printPageButton,
-      '-', {
+      '-',
         text: 'Find page',
         iconCls: 'icon-search'
-      }, {
+      ,
         text: 'Find text',
         iconCls: 'icon-search'
-      }, '->', {
+      '->',
         text: 'About',
         iconCls: 'icon-about'
-      }]
+      ]
 
     @callParent([options])
 
