@@ -1,3 +1,7 @@
+/**
+ *= require_self
+ */
+
 .icon-folder-page {
   background-image: url(/images/icons/folder_page.png) !important;
 }

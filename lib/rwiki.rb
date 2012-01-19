@@ -1,6 +1,6 @@
-require 'sinatra'
-require 'sinatra/base'
-require 'erb'
+require 'bundler'
+Bundler.require
+
 require 'json'
 
 module Rwiki
