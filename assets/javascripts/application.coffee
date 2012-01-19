@@ -20,6 +20,7 @@
 
 window.RwikiEvent =
   pageClosed: 'rwiki:pageClosed'
+  lastPageClosed: 'rwiki:lastPageClosed'
   createPage: 'rwiki:createPage'
   editPage: 'rwiki:editPage'
 

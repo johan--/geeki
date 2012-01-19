@@ -20,6 +20,7 @@ Ext.define 'Rwiki.controller.tab.Toolbar',
     @application.on RwikiEvent.pageClosed, (page) =>
       unless @getPanel().hasTabs()
         @getToolbar().setPage(null)
+        @application.fireEvent(RwikiEvent.lastPageClosed)
 
     @control
       'rwikiToolbar #edit-page':

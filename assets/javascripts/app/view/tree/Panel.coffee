@@ -16,3 +16,6 @@ Ext.define 'Rwiki.view.tree.Panel',
   selectNodeById: (id) ->
     node = @findPageNodeById(id)
     @getSelectionModel().select(node) if node
+
+  unselectNode: ->
+    @getSelectionModel().deselectAll()

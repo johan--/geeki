@@ -19,7 +19,10 @@ Ext.define 'Rwiki.controller.tree.Panel',
   ]
 
   init: ->
-    console.log('TreePanel#init', arguments);
+    console.log('TreePanel#init', arguments)
+
+    @application.on RwikiEvent.lastPageClosed, =>
+      @getTreePanel().unselectNode()
 
     @control
       rwikiTreePanel:
@@ -30,8 +33,8 @@ Ext.define 'Rwiki.controller.tree.Panel',
     console.log('TreePanel#_onNodeSelect', arguments)
 
     pageId = pageNode.getId()
-    panel = @getTabPanel()
-    tab = panel.findPageTabById(pageId)
+    tabPanel = @getTabPanel()
+    tab = tabPanel.findPageTabById(pageId)
 
     unless tab
       Rwiki.model.Page.load pageId,
@@ -40,10 +43,10 @@ Ext.define 'Rwiki.controller.tree.Panel',
           @application.fireEvent('rwiki:pageLoaded', page)
 
           tab = Ext.create('Rwiki.view.tab.PageTab', page: page)
-          panel.add(tab)
-          panel.setActiveTab(tab)
+          tabPanel.add(tab)
+          tabPanel.setActiveTab(tab)
     else
-      panel.setActiveTab(tab)
+      tabPanel.setActiveTab(tab)
 
   _onNodeContextMenu: (view, pageNode, item, index, event) ->
     console.log('TreePanel#_onNodeContextMenu', arguments)

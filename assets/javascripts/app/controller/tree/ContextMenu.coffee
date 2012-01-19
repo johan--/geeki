@@ -19,7 +19,7 @@ Ext.define 'Rwiki.controller.tree.ContextMenu',
           console.log('TreeNodeMenu#create', arguments)
           @application.fireEvent(RwikiEvent.createPage, @getPageNode())
 
-      'menu #edit': ->
+      'menu #edit':
         click: ->
           @application.fireEvent(RwikiEvent.editPage, @getPageNode())
 
