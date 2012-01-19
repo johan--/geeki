@@ -1,9 +1,3 @@
-window.Rwiki = {
-  logMethodCall: function(name, args) {
-    console.log(name, args);
-  }
-};
-
 Ext.Loader.setConfig({
   enabled: true
 });
@@ -27,8 +21,13 @@ Ext.application({
 
   launch: function() {
     console.log('Initialize the application..');
+
     this.on('rwiki:tabClose', function(tab) {
-      console.log('closing...', tab);
+      console.log("on rwiki:tabClose", arguments);
     });
+
+    this.on('rwiki:createPage', function(parentPageNode) {
+      console.log("on rwiki:createPage", arguments);
+    })
   }
 });

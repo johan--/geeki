@@ -3,5 +3,9 @@ Ext.define('Rwiki.model.PageNode', {
   fields: [
     { name: 'id', type: 'int' },
     { name: 'text', type: 'string' }
-  ]
+  ],
+
+  isRoot: function() {
+    return this.id === 1;
+  }
 });

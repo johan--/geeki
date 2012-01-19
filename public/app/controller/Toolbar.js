@@ -20,7 +20,7 @@ Ext.define('Rwiki.controller.Toolbar', {
     this.control({
       'rwikiToolbar #edit-page': {
         click: function(button, event) {
-          Rwiki.logMethodCall('Toolbar#editPage', arguments);
+          console.log('Toolbar#editPage', arguments);
           var page = this.getToolbar().getPage();
           console.log(page);
         }

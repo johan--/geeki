@@ -32,6 +32,7 @@ Ext.define('Rwiki.view.Toolbar', {
         text: 'About',
         iconCls: 'icon-about'
       }];
+
     this.callParent(options);
   },
 

@@ -14,10 +14,10 @@ Ext.define('Rwiki.controller.PageTab', {
     this.control({
       rwikiPageTab: {
         show: function(tab) {
-          Rwiki.logMethodCall('PageTab#show', arguments);
+          console.log('PageTab#show', arguments);
         },
         close: function(tab) {
-          Rwiki.logMethodCall('PageTab#close', arguments);
+          console.log('PageTab#close', arguments);
           this.application.fireEvent('rwiki:tabClose', tab);
         }
       }

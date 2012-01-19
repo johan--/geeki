@@ -22,7 +22,7 @@ Ext.define('Rwiki.controller.TreePanel', {
   }],
 
   init: function() {
-    Rwiki.logMethodCall('TreePanel#init', arguments);
+    console.log('TreePanel#init', arguments);
 
     this.control({
       rwikiTreePanel: {
@@ -34,12 +34,12 @@ Ext.define('Rwiki.controller.TreePanel', {
 
   _onNodeSelect: function(rowModel, record, index, opts) {
     var self = this;
-    Rwiki.logMethodCall('TreePanel#_onNodeSelect', arguments);
+    console.log('TreePanel#_onNodeSelect', arguments);
 
     var id = record.getId();
     Rwiki.model.Page.load(id, {
       success: function(page) {
-        Rwiki.logMethodCall('Page#load', arguments);
+        console.log('Page#load', arguments);
         self.application.fireEvent('rwiki:pageLoaded', page);
 
         Rwiki.model.Page.setCurrentPage(page);
@@ -55,16 +55,12 @@ Ext.define('Rwiki.controller.TreePanel', {
     });
   },
 
-  _onNodeContextMenu: function(view, record, item, index, event) {
-    Rwiki.logMethodCall('TreePanel#_onNodeContextMenu', arguments);
-
-    // set the context menu record
-    var menuController = this.getController('TreeNodeMenu');
-    menuController.setPageRecord(record);
+  _onNodeContextMenu: function(view, pageNode, item, index, event) {
+    console.log('TreePanel#_onNodeContextMenu', arguments);
 
     // display the context menu
     var menu = this._getContextMenu();
-    menu.showAt(event.getXY());
+    menu.showFor(pageNode, event.getXY());
 
     event.stopEvent();
   },
