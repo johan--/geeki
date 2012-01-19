@@ -65,3 +65,176 @@
 .icon-about {
   background-image: url(/images/icons/information.png) !important;
 }
+
+.page-container h1, .page-container h2, .page-container h3, .page-container h4, .page-container h5, .page-container h6 {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.page-container b, .page-container strong {
+  font-weight: bold;
+}
+
+.page-container h1 {
+  font-size: xx-large;
+}
+
+.page-container h2 {
+  font-size: x-large;
+}
+
+.page-container h3 {
+  font-size: large;
+}
+
+.page-container h4, .page-container h5,.page-container  h6 {
+  font-size: medium;
+}
+
+.page-container em, .page-container i, .page-container dfn {
+  font-style: italic;
+}
+
+.page-container dfn {
+  font-weight:bold;
+}
+
+.page-container p, .page-container code,.page-container  pre, .page-container kbd {
+  margin:0 0 1.5em 0;
+}
+
+.page-container blockquote {
+  margin:0 1.5em 1.5em 1.5em;
+}
+
+.page-container cite {
+  font-style: italic;
+}
+
+.page-container li ul, .page-container li ol {
+  margin:0 1.5em;
+}
+
+.page-container ul, .page-container ol {
+  margin:0 1.5em 1.5em 1.5em;
+}
+
+.page-container ul li {
+  list-style-type:disc;
+}
+
+.page-container ol li {
+  list-style-type:decimal;
+}
+
+.page-container ol ol li {
+  list-style: upper-alpha;
+}
+
+.page-container ol ol ol li {
+  list-style: lower-roman;
+}
+
+.page-container ol ol ol ol li {
+  list-style: lower-alpha;
+}
+
+.page-container dl {
+  margin:0 0 1.5em 0;
+}
+
+.page-container dl dt {
+  font-weight:bold;
+}
+
+.page-container dd {
+  margin-left:1.5em;
+}
+
+.page-container table {
+  margin-bottom:1.4em;
+  width:100%;
+}
+
+.page-container th {
+  font-weight:bold;
+}
+
+.page-container th, .page-container td, .page-container caption {
+  padding:4px 10px 4px 5px;
+}
+
+.page-container tfoot {
+  font-style:italic;
+}
+
+.page-container sup, .page-container sub {
+  line-height:0;
+}
+
+.page-container abbr, .page-container acronym {
+  border-bottom: 1px dotted;
+}
+
+.page-container address {
+  margin:0 0 1.5em;
+  font-style:italic;
+}
+
+.page-container del {
+  text-decoration: line-through;
+}
+
+.page-container pre {
+  margin:1.5em 0;
+  white-space:pre;
+}
+
+.page-container img.centered, .page-container .aligncenter, .page-container div.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-container img.alignright {
+  display: inline;
+}
+
+.page-container img.alignleft {
+  display: inline;
+}
+
+.page-container .alignright {
+  float: right;
+  margin-left: 10px;
+}
+
+.page-container .alignleft {
+  float: left;
+  margin-right: 10px;
+}
+
+.toc-container {
+  position: fixed;
+  width: 100%;
+}
+
+.toc {
+  clear: both;
+  float: right;
+  font-size: 80%;
+  width: 250px;
+  border: 1px solid #D0DFF0;
+  margin-right: 50px;
+  background-color: #F5F5F5;
+  padding: 5px;
+  -moz-border-radius: 8px;
+}
+
+.toc ol {
+  margin: 0 1.5em;
+}
+
+.toc a {
+  color: black;
+}

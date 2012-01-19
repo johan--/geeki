@@ -8,6 +8,10 @@ Ext.define 'Rwiki.view.tab.PageTab',
     @setPage(options.page)
     @callParent([options])
 
+  show: ->
+    Ext.get(@getId()).insertHtml(@page.get('body'))
+    @callParent()
+
   getPage: ->
     @page
 
@@ -15,4 +19,3 @@ Ext.define 'Rwiki.view.tab.PageTab',
     @page = page
 
     @title = @page.get('text')
-    @setText(@page.get('body'))
