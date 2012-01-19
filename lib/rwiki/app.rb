@@ -11,6 +11,7 @@ module Rwiki
     set :app_file, File.join(File.dirname(__FILE__), '../../..')
 
     set :sprockets, Sprockets::Environment.new(root)
+    set :precompile,    [ /\w+\.(?!js|css).+/, /application.(css|js)$/ ]
     set :assets_prefix, 'assets'
     set :assets_path, File.join(root, 'public', assets_prefix)
 
@@ -21,7 +22,6 @@ module Rwiki
     configure do
       sprockets.append_path(File.join(root, 'assets', 'stylesheets'))
       sprockets.append_path(File.join(root, 'assets', 'javascripts'))
-      sprockets.append_path(File.join(root, 'assets', 'images'))
 
       sprockets.context_class.instance_eval do
         include AssetHelpers
