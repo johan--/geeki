@@ -24,6 +24,13 @@ Ext.define 'Rwiki.controller.tab.Toolbar',
 
     @control
       'rwikiToolbar #edit-page':
-        click: (button, event) ->
+        click: ->
           page = @getToolbar().getPage()
           @application.fireEvent(RwikiEvent.editPage, page)
+
+      'rwikiToolbar #reload-page':
+        click: ->
+          page = @getToolbar().getPage()
+          Rwiki.model.Page.load page.getId(),
+            success: (page) =>
+              @getPanel().getActiveTab().setPage(page)

@@ -5,12 +5,14 @@ Ext.define 'Rwiki.view.tab.PageTab',
   page: null
 
   constructor: (options) ->
-    @page = options.page
-
-    options.title = @page.get('text')
-    options.text = @page.get('body')
-
+    @setPage(options.page)
     @callParent([options])
 
   getPage: ->
     @page
+
+  setPage: (page) ->
+    @page = page
+
+    @title = @page.get('text')
+    @setText(@page.get('body'))

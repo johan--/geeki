@@ -17,8 +17,14 @@ Ext.define 'Rwiki.view.tab.Toolbar',
       iconCls: 'icon-print'
       disabled: true
 
+    @reloadPageButton = Ext.create 'Ext.Button',
+      id: 'reload-page'
+      text: 'Reload page'
+      disabled: true
+
     @items = [
-      @editPageButton
+      @editPageButton,
+      @reloadPageButton,
       @printPageButton,
       '-',
         text: 'Find page',
@@ -35,6 +41,7 @@ Ext.define 'Rwiki.view.tab.Toolbar',
 
   disablePageButtons: (disabled) ->
     @editPageButton.setDisabled(disabled)
+    @reloadPageButton.setDisabled(disabled)
     @printPageButton.setDisabled(disabled)
 
   setPage: (page) ->
