@@ -1,19 +1,10 @@
 Ext.Loader.setConfig({
-  enabled: true
+  enabled: false
 });
 
 Ext.application({
   appFolder: '/javascripts/app',
   name: 'Rwiki',
-
-  requires: [
-    'Rwiki.controller.tree.TreePanel',
-//    'Rwiki.controller.tree.TreeNodeMenu',
-//
-//    'Rwiki.controller.tab.TabPanel',
-//    'Rwiki.controller.tab.PageTab',
-//    'Rwiki.controller.tab.Toolbar'
-  ],
 
   controllers: [
     'tree.TreePanel',

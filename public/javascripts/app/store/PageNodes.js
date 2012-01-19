@@ -1,6 +1,5 @@
 Ext.define('Rwiki.store.PageNodes', {
   extend: 'Ext.data.TreeStore',
-  requires: 'Rwiki.model.PageNode',
   model: 'Rwiki.model.PageNode',
 
   autoLoad: true,
