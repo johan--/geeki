@@ -7,6 +7,7 @@
 #= require ./app/view/tab/Toolbar
 #= require ./app/view/tab/Panel
 #= require ./app/view/EditorWindow
+#= require ./app/view/AboutDialog
 #= require ./app/view/Viewport
 #
 #= require ./app/controller/tree/ContextMenu

@@ -37,3 +37,8 @@ Ext.define 'Rwiki.controller.tab.Toolbar',
             success: (page) =>
               @getPanel().getActiveTab().setPage(page)
               Ext.getBody().unmask()
+
+      'rwikiToolbar #about':
+        click: ->
+          @aboutDialog ||= Ext.create('Rwiki.AboutDialog')
+          @aboutDialog.show()

@@ -33,6 +33,7 @@ Ext.define 'Rwiki.view.tab.Toolbar',
         text: 'Find text',
         iconCls: 'icon-search'
       '->',
+        id: 'about'
         text: 'About',
         iconCls: 'icon-about'
       ]
