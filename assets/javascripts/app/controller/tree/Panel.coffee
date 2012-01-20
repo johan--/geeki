@@ -28,6 +28,16 @@ Ext.define 'Rwiki.controller.tree.Panel',
       rwikiTreePanel:
         itemclick: @_onNodeClick,
         itemcontextmenu: @_onNodeContextMenu
+        render: ->
+          console.log('render....')
+          treePanel = @getTreePanel()
+          store = treePanel.getStore()
+
+          treePanel.body.mask('Loading pages...')
+          store.load
+            callback:
+              treePanel.body.unmask()
+
 
   _onNodeClick: (view, pageNode) ->
     console.log('TreePanel#_onNodeSelect', arguments)

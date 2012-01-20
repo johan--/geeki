@@ -8,8 +8,6 @@ Ext.define 'Rwiki.view.tree.Panel',
   resizable: true
   store: Ext.create('Rwiki.store.PageNodes')
 
-  rootVisible: false
-
   findPageNodeById: (id) ->
     @store.getNodeById(id)
 
