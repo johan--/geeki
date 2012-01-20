@@ -23,23 +23,31 @@ Ext.define 'Geeki.view.tab.Toolbar',
       iconCls: 'icon-reload'
       disabled: true
 
+    @findPageButton = Ext.create 'Ext.Button',
+      id: 'find-page'
+      text: 'Find page'
+      iconCls: 'icon-search'
+
+    @findTextButton = Ext.create 'Ext.Button',
+      id: 'find-text'
+      text: 'Find text'
+      iconCls: 'icon-search'
+
+    @aboutButton = Ext.create 'Ext.Button',
+      id: 'about'
+      text: 'About'
+      iconCls: 'icon-about'
+
     options.items = [
-      @editPageButton,
-      @reloadPageButton,
-      @printPageButton,
-      '-',
-        id: 'find-page'
-        text: 'Find page',
-        iconCls: 'icon-search'
-      ,
-        id: 'find-text'
-        text: 'Find text',
-        iconCls: 'icon-search'
-      '->',
-        id: 'about'
-        text: 'About',
-        iconCls: 'icon-about'
-      ]
+      @editPageButton
+      @reloadPageButton
+      @printPageButton
+      '-'
+      @findPageButton
+      @findTextButton
+      '->'
+      @aboutButton
+    ]
 
     @callParent([options])
 
