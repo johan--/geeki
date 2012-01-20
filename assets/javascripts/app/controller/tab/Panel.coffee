@@ -1,4 +1,4 @@
-Ext.define 'Rwiki.controller.tab.Panel',
+Ext.define 'Geeki.controller.tab.Panel',
   extend: 'Ext.app.Controller'
 
   views: [
@@ -8,17 +8,17 @@ Ext.define 'Rwiki.controller.tab.Panel',
 
   refs: [
       ref: 'tabPanel'
-      selector: 'rwikiTabPanel'
+      selector: 'geekiTabPanel'
     ,
       ref: 'treePanel'
-      selector: 'rwikiTreePanel'
+      selector: 'geekiTreePanel'
   ]
 
   init: ->
     console.log('TabPanel#init', arguments)
 
     @control
-      rwikiTabPanel:
+      geekiTabPanel:
         tabchange: (tabPanel, tab, oldTab) ->
           console.log('TabPanel#tabchange', arguments)
           treePanel = @getTreePanel()

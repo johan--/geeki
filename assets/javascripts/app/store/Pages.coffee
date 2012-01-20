@@ -1,4 +1,4 @@
-Ext.define 'Rwiki.store.Pages',
+Ext.define 'Geeki.store.Pages',
   extend: 'Ext.data.Store'
-  model: 'Rwiki.model.Page'
+  model: 'Geeki.model.Page'
   autoLoad: false

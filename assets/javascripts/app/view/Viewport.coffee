@@ -1,11 +1,11 @@
-Ext.define 'Rwiki.view.Viewport',
+Ext.define 'Geeki.view.Viewport',
   extend: 'Ext.container.Viewport'
 
   layout: 'border'
   items: [
-    Ext.create 'Rwiki.view.tree.Panel',
+    Ext.create 'Geeki.view.tree.Panel',
       region: 'west'
 
-    Ext.create 'Rwiki.view.tab.Panel',
+    Ext.create 'Geeki.view.tab.Panel',
       region: 'center'
   ]

@@ -1,4 +1,4 @@
-Ext.define 'Rwiki.AboutDialog',
+Ext.define 'Geeki.AboutDialog',
   extend: 'Ext.Window'
 
   title: 'About'

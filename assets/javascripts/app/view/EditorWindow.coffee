@@ -1,6 +1,6 @@
-Ext.define 'Rwiki.view.EditorWindow',
+Ext.define 'Geeki.view.EditorWindow',
   extend: 'Ext.window.Window'
-  alias: 'widget.rwikiEditorWindow'
+  alias: 'widget.geekiEditorWindow'
 
   title: 'Editing page'
   modal: true

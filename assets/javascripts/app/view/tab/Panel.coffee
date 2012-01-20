@@ -1,8 +1,8 @@
-Ext.define 'Rwiki.view.tab.Panel',
+Ext.define 'Geeki.view.tab.Panel',
   extend: 'Ext.tab.Panel'
-  alias: 'widget.rwikiTabPanel'
+  alias: 'widget.geekiTabPanel'
 
-  tbar: Ext.create('Rwiki.view.tab.Toolbar')
+  tbar: Ext.create('Geeki.view.tab.Toolbar')
   items: []
 
   findPageTabById: (id) ->

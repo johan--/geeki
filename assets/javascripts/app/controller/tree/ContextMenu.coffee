@@ -1,4 +1,4 @@
-Ext.define 'Rwiki.controller.tree.ContextMenu',
+Ext.define 'Geeki.controller.tree.ContextMenu',
   extend: 'Ext.app.Controller'
 
   views: [
@@ -7,7 +7,7 @@ Ext.define 'Rwiki.controller.tree.ContextMenu',
 
   refs: [
     ref: 'menu'
-    selector: 'rwikiTreeContextMenu'
+    selector: 'geekiTreeContextMenu'
   ]
 
   init: ->
@@ -16,19 +16,19 @@ Ext.define 'Rwiki.controller.tree.ContextMenu',
     @control
       'menu #create':
         click: ->
-          @application.fireEvent(RwikiEvent.createPage, @getPageNode())
+          @application.fireEvent(GeekiEvent.createPage, @getPageNode())
 
       'menu #edit':
         click: ->
-          @application.fireEvent(RwikiEvent.editPage, @getPageNode())
+          @application.fireEvent(GeekiEvent.editPage, @getPageNode())
 
       'menu #rename':
         click: ->
-          @application.fireEvent(RwikiEvent.notImplemented)
+          @application.fireEvent(GeekiEvent.notImplemented)
 
       'menu #delete':
         click: ->
-          @application.fireEvent(RwikiEvent.notImplemented)
+          @application.fireEvent(GeekiEvent.notImplemented)
 
   getPageNode: ->
     @getMenu().getPageNode()

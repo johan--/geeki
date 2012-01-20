@@ -1,4 +1,4 @@
-Ext.define 'Rwiki.controller.tree.Panel',
+Ext.define 'Geeki.controller.tree.Panel',
   extend: 'Ext.app.Controller'
 
   views: [
@@ -11,21 +11,21 @@ Ext.define 'Rwiki.controller.tree.Panel',
   ]
 
   refs: [
-      selector: 'rwikiTreePanel',
+      selector: 'geekiTreePanel',
       ref: 'treePanel'
     ,
-      selector: 'rwikiTabPanel',
+      selector: 'geekiTabPanel',
       ref: 'tabPanel'
   ]
 
   init: ->
     console.log('TreePanel#init', arguments)
 
-    @application.on RwikiEvent.lastPageClosed, =>
+    @application.on GeekiEvent.lastPageClosed, =>
       @getTreePanel().unselectNode()
 
     @control
-      rwikiTreePanel:
+      geekiTreePanel:
         itemclick: @_onNodeClick,
         itemcontextmenu: @_onNodeContextMenu
 
@@ -37,12 +37,12 @@ Ext.define 'Rwiki.controller.tree.Panel',
     tab = tabPanel.findPageTabById(pageId)
 
     unless tab
-      Rwiki.model.Page.load pageId,
+      Geeki.model.Page.load pageId,
         success: (page) =>
           console.log('Page#load', arguments)
-          @application.fireEvent('rwiki:pageLoaded', page)
+          @application.fireEvent('geeki:pageLoaded', page)
 
-          tab = Ext.create('Rwiki.view.tab.PageTab', page: page)
+          tab = Ext.create('Geeki.view.tab.PageTab', page: page)
           tabPanel.add(tab)
           tabPanel.setActiveTab(tab)
     else
@@ -58,4 +58,4 @@ Ext.define 'Rwiki.controller.tree.Panel',
     event.stopEvent()
 
   _getContextMenu: ->
-    @_contextMenu ||= Ext.create('Rwiki.view.tree.ContextMenu')
+    @_contextMenu ||= Ext.create('Geeki.view.tree.ContextMenu')

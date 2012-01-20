@@ -1,4 +1,4 @@
-Ext.define 'Rwiki.NotImplementedDialog',
+Ext.define 'Geeki.NotImplementedDialog',
   extend: 'Ext.Window',
   title: 'Notification'
   html: 'Not implemented yet!'

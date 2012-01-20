@@ -1,4 +1,4 @@
-Ext.define 'Rwiki.controller.tab.Toolbar',
+Ext.define 'Geeki.controller.tab.Toolbar',
   extend: 'Ext.app.Controller'
 
   views: [
@@ -6,47 +6,47 @@ Ext.define 'Rwiki.controller.tab.Toolbar',
   ]
 
   refs: [
-      selector: 'rwikiToolbar'
+      selector: 'geekiToolbar'
       ref: 'toolbar'
     ,
-      selector: 'rwikiTabPanel'
+      selector: 'geekiTabPanel'
       ref: 'panel'
   ]
 
   init: ->
-    @application.on 'rwiki:pageLoaded', (page) =>
+    @application.on 'geeki:pageLoaded', (page) =>
       @getToolbar().setPage(page)
 
-    @application.on RwikiEvent.pageClosed, (page) =>
+    @application.on GeekiEvent.pageClosed, (page) =>
       unless @getPanel().hasTabs()
         @getToolbar().setPage(null)
-        @application.fireEvent(RwikiEvent.lastPageClosed)
+        @application.fireEvent(GeekiEvent.lastPageClosed)
 
     @control
-      'rwikiToolbar #edit-page':
+      'geekiToolbar #edit-page':
         click: ->
           page = @getToolbar().getPage()
-          @application.fireEvent(RwikiEvent.editPage, page)
+          @application.fireEvent(GeekiEvent.editPage, page)
 
-      'rwikiToolbar #reload-page':
+      'geekiToolbar #reload-page':
         click: ->
           page = @getToolbar().getPage()
 
           Ext.getBody().mask("Lading page #{page.get('text')}")
-          Rwiki.model.Page.load page.getId(),
+          Geeki.model.Page.load page.getId(),
             success: (page) =>
               @getPanel().getActiveTab().updateContent(page.get('body'))
               Ext.getBody().unmask()
 
-      'rwikiToolbar #find-page':
+      'geekiToolbar #find-page':
         click: ->
-          @application.fireEvent(RwikiEvent.notImplemented)
+          @application.fireEvent(GeekiEvent.notImplemented)
 
-      'rwikiToolbar #find-text':
+      'geekiToolbar #find-text':
         click: ->
-          @application.fireEvent(RwikiEvent.notImplemented)
+          @application.fireEvent(GeekiEvent.notImplemented)
 
-      'rwikiToolbar #about':
+      'geekiToolbar #about':
         click: ->
-          @aboutDialog ||= Ext.create('Rwiki.AboutDialog')
+          @aboutDialog ||= Ext.create('Geeki.AboutDialog')
           @aboutDialog.show()

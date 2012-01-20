@@ -1,4 +1,4 @@
-Ext.define 'Rwiki.controller.tab.PageTab',
+Ext.define 'Geeki.controller.tab.PageTab',
   extend: 'Ext.app.Controller'
 
   views: [
@@ -7,14 +7,14 @@ Ext.define 'Rwiki.controller.tab.PageTab',
 
   refs: [
     ref: 'tab',
-    selector: 'rwikiPageTab'
+    selector: 'geekiPageTab'
   ]
 
   init: ->
     @control
-      rwikiPageTab:
+      geekiPageTab:
         show: (tab) ->
           console.log('PageTab#show', arguments)
 
         destroy: (tab)->
-          @application.fireEvent(RwikiEvent.pageClosed, tab)
+          @application.fireEvent(GeekiEvent.pageClosed, tab)

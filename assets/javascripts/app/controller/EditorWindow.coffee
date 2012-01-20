@@ -1,4 +1,4 @@
-Ext.define 'Rwiki.controller.EditorWindow',
+Ext.define 'Geeki.controller.EditorWindow',
   extend: 'Ext.app.Controller',
 
   views: [
@@ -7,20 +7,20 @@ Ext.define 'Rwiki.controller.EditorWindow',
 
   refs: [
     ref: 'editorWindow'
-    selector: 'rwikiEditorWindow'
+    selector: 'geekiEditorWindow'
   ]
 
   init: ->
     @control
-      'rwikiEditorWindow #save':
+      'geekiEditorWindow #save':
         click: ->
           console.log('Save clicked!')
 
-      'rwikiEditorWindow #save-and-continue':
+      'geekiEditorWindow #save-and-continue':
         click: ->
           console.log('Save and continue clicked!')
 
-      'rwikiEditorWindow #cancel':
+      'geekiEditorWindow #cancel':
         click: ->
           win = @getEditorWindow()
           win.close()

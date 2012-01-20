@@ -1,4 +1,4 @@
-Ext.define 'Rwiki.model.PageNode',
+Ext.define 'Geeki.model.PageNode',
   extend: 'Ext.data.Model'
 
   fields: [

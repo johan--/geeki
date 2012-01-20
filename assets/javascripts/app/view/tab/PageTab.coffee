@@ -1,6 +1,6 @@
-Ext.define 'Rwiki.view.tab.PageTab',
+Ext.define 'Geeki.view.tab.PageTab',
   extend: 'Ext.Container'
-  alias: 'widget.rwikiPageTab'
+  alias: 'widget.geekiPageTab'
 
   closable: true
   page: null

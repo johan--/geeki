@@ -1,12 +1,12 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
-require 'rwiki'
+require 'geeki'
 
 guard("sprockets2",
-  :sprockets   => Rwiki::App.sprockets,
-  :assets_path => Rwiki::App.assets_path,
-  :precompile  => Rwiki::App.precompile,
-  :digest      => Rwiki::App.digest_assets) do
+  :sprockets   => Geeki::App.sprockets,
+  :assets_path => Geeki::App.assets_path,
+  :precompile  => Geeki::App.precompile,
+  :digest      => Geeki::App.digest_assets) do
 
   watch %r(^assets/.+$)
-  watch "lib/rwiki/app.rb"
+  watch "lib/geeki/app.rb"
 end

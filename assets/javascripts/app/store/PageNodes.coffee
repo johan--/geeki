@@ -1,6 +1,6 @@
-Ext.define 'Rwiki.store.PageNodes',
+Ext.define 'Geeki.store.PageNodes',
   extend: 'Ext.data.TreeStore'
-  model: 'Rwiki.model.PageNode'
+  model: 'Geeki.model.PageNode'
 
   autoLoad: true
   proxy:

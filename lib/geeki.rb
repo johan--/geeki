@@ -3,9 +3,9 @@ Bundler.require
 
 require 'json'
 
-module Rwiki
-  autoload :App, 'rwiki/app'
-  autoload :Version, 'rwiki/version'
+module Geeki
+  autoload :App, 'geeki/app'
+  autoload :Version, 'geeki/version'
 
   def self.debug
     require 'ruby-debug'

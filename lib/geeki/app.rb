@@ -1,4 +1,4 @@
-module Rwiki
+module Geeki
   class App < Sinatra::Base
     set :root, File.join(File.dirname(__FILE__), '../..')
     set :app_file, File.join(File.dirname(__FILE__), '../../..')

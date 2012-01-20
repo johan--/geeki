@@ -1,6 +1,6 @@
-Ext.define 'Rwiki.view.tab.Toolbar',
+Ext.define 'Geeki.view.tab.Toolbar',
   extend: 'Ext.toolbar.Toolbar'
-  alias: 'widget.rwikiToolbar'
+  alias: 'widget.geekiToolbar'
 
   page: null
 

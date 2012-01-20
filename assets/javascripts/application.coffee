@@ -20,20 +20,20 @@
 #
 #= require_self
 
-window.RwikiEvent =
-  pageClosed: 'rwiki:pageClosed'
-  lastPageClosed: 'rwiki:lastPageClosed'
-  createPage: 'rwiki:createPage'
-  editPage: 'rwiki:editPage'
+window.GeekiEvent =
+  pageClosed: 'geeki:pageClosed'
+  lastPageClosed: 'geeki:lastPageClosed'
+  createPage: 'geeki:createPage'
+  editPage: 'geeki:editPage'
 
-  notImplemented: 'rwiki:notImplemented'
+  notImplemented: 'geeki:notImplemented'
 
 Ext.Loader.setConfig
   enabled: false
 
 Ext.application
   appFolder: '/assets/app'
-  name: 'Rwiki'
+  name: 'Geeki'
 
   controllers: [
     'tree.Panel'
@@ -54,22 +54,22 @@ Ext.application
   launch: ->
     console.log('Initialize the application..')
 
-    @on RwikiEvent.pageClosed, (tab) ->
-      console.log("on #{RwikiEvent.pageClosed}", arguments)
+    @on GeekiEvent.pageClosed, (tab) ->
+      console.log("on #{GeekiEvent.pageClosed}", arguments)
 
-    @on RwikiEvent.editPage, (page) ->
-      console.log("on #{RwikiEvent.editPage}", arguments)
+    @on GeekiEvent.editPage, (page) ->
+      console.log("on #{GeekiEvent.editPage}", arguments)
 
       id = page.getId()
-      Rwiki.model.Page.load id,
+      Geeki.model.Page.load id,
         success: (page) ->
-          @editorWindow ||= Ext.create('Rwiki.view.EditorWindow')
+          @editorWindow ||= Ext.create('Geeki.view.EditorWindow')
           @editorWindow.setPage(page)
           @editorWindow.show()
 
-    @on RwikiEvent.createPage, (parentPageNode) ->
-      console.log("on #{RwikiEvent.createPage}", arguments)
+    @on GeekiEvent.createPage, (parentPageNode) ->
+      console.log("on #{GeekiEvent.createPage}", arguments)
 
-    @on RwikiEvent.notImplemented, ->
-      @notImplementedNotification ||= Ext.create('Rwiki.NotImplementedDialog')
+    @on GeekiEvent.notImplemented, ->
+      @notImplementedNotification ||= Ext.create('Geeki.NotImplementedDialog')
       @notImplementedNotification.show()
