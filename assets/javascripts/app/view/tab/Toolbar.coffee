@@ -20,6 +20,7 @@ Ext.define 'Rwiki.view.tab.Toolbar',
     @reloadPageButton = Ext.create 'Ext.Button',
       id: 'reload-page'
       text: 'Reload page'
+      iconCls: 'icon-reload'
       disabled: true
 
     options.items = [
@@ -27,9 +28,11 @@ Ext.define 'Rwiki.view.tab.Toolbar',
       @reloadPageButton,
       @printPageButton,
       '-',
+        id: 'find-page'
         text: 'Find page',
         iconCls: 'icon-search'
       ,
+        id: 'find-text'
         text: 'Find text',
         iconCls: 'icon-search'
       '->',

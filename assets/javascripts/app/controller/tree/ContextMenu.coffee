@@ -16,7 +16,6 @@ Ext.define 'Rwiki.controller.tree.ContextMenu',
     @control
       'menu #create':
         click: ->
-          console.log('TreeNodeMenu#create', arguments)
           @application.fireEvent(RwikiEvent.createPage, @getPageNode())
 
       'menu #edit':
@@ -25,11 +24,11 @@ Ext.define 'Rwiki.controller.tree.ContextMenu',
 
       'menu #rename':
         click: ->
-          console.log('TreeNodeMenu#rename', arguments)
+          @application.fireEvent(RwikiEvent.notImplemented)
 
       'menu #delete':
         click: ->
-          console.log('TreeNodeMenu#delete', arguments)
+          @application.fireEvent(RwikiEvent.notImplemented)
 
   getPageNode: ->
     @getMenu().getPageNode()

@@ -38,6 +38,14 @@ Ext.define 'Rwiki.controller.tab.Toolbar',
               @getPanel().getActiveTab().updateContent(page.get('body'))
               Ext.getBody().unmask()
 
+      'rwikiToolbar #find-page':
+        click: ->
+          @application.fireEvent(RwikiEvent.notImplemented)
+
+      'rwikiToolbar #find-text':
+        click: ->
+          @application.fireEvent(RwikiEvent.notImplemented)
+
       'rwikiToolbar #about':
         click: ->
           @aboutDialog ||= Ext.create('Rwiki.AboutDialog')

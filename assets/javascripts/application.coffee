@@ -8,6 +8,7 @@
 #= require ./app/view/tab/Panel
 #= require ./app/view/EditorWindow
 #= require ./app/view/AboutDialog
+#= require ./app/view/NotImplementedDialog
 #= require ./app/view/Viewport
 #
 #= require ./app/controller/tree/ContextMenu
@@ -24,6 +25,8 @@ window.RwikiEvent =
   lastPageClosed: 'rwiki:lastPageClosed'
   createPage: 'rwiki:createPage'
   editPage: 'rwiki:editPage'
+
+  notImplemented: 'rwiki:notImplemented'
 
 Ext.Loader.setConfig
   enabled: false
@@ -66,3 +69,7 @@ Ext.application
 
     @on RwikiEvent.createPage, (parentPageNode) ->
       console.log("on #{RwikiEvent.createPage}", arguments)
+
+    @on RwikiEvent.notImplemented, ->
+      @notImplementedNotification ||= Ext.create('Rwiki.NotImplementedDialog')
+      @notImplementedNotification.show()

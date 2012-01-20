@@ -66,6 +66,10 @@
   background-image: url(/images/icons/information.png) !important;
 }
 
+.icon-reload {
+  background-image: url(/images/icons/arrow_rotate_anticlockwise.png) !important;
+}
+
 .page-container h1, .page-container h2, .page-container h3, .page-container h4, .page-container h5, .page-container h6 {
   margin-bottom: 15px;
   font-weight: bold;
