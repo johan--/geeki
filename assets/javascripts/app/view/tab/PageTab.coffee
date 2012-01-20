@@ -1,7 +1,8 @@
 Ext.define 'Rwiki.view.tab.PageTab',
-  extend: 'Ext.tab.Tab'
+  extend: 'Ext.Container'
   alias: 'widget.rwikiPageTab'
 
+  closable: true
   page: null
 
   constructor: (options = {}) ->
