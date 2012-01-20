@@ -4,7 +4,7 @@ Ext.define 'Rwiki.view.tree.ContextMenu',
 
   pageNode: null
 
-  constructor: (options) ->
+  constructor: (options = {}) ->
     @createMenuItem = Ext.create 'Ext.menu.Item',
       id: 'create'
       text: 'Create page'
@@ -25,7 +25,7 @@ Ext.define 'Rwiki.view.tree.ContextMenu',
       text: 'Delete page'
       iconCls: 'icon-delete-page'
 
-    @items = [
+    options.items = [
       @createMenuItem,
       '-',
       @editMenuItem,

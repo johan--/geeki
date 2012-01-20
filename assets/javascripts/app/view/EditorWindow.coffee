@@ -12,10 +12,11 @@ Ext.define 'Rwiki.view.EditorWindow',
 
   layout: 'border'
 
-  constructor: (options) ->
+  constructor: (options  = {}) ->
     @htmlEditor = Ext.create 'Ext.form.HtmlEditor',
       region: 'center'
-    @items = [@htmlEditor]
+
+    options.items = [@htmlEditor]
 
     @callParent([options])
 

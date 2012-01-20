@@ -4,7 +4,7 @@ Ext.define 'Rwiki.view.tab.Toolbar',
 
   page: null
 
-  constructor: (options) ->
+  constructor: (options = {}) ->
     @editPageButton = Ext.create 'Ext.Button',
       id: 'edit-page'
       text: 'Edit page'
@@ -22,7 +22,7 @@ Ext.define 'Rwiki.view.tab.Toolbar',
       text: 'Reload page'
       disabled: true
 
-    @items = [
+    options.items = [
       @editPageButton,
       @reloadPageButton,
       @printPageButton,

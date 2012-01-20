@@ -4,7 +4,7 @@ Ext.define 'Rwiki.view.tab.PageTab',
 
   page: null
 
-  constructor: (options) ->
+  constructor: (options = {}) ->
     @setPage(options.page)
     @callParent([options])
 
