@@ -48,7 +48,7 @@ module Rwiki
     get '/pages/:page_id.json', :provides => :json do
       @id = params[:page_id]
 
-      page = { :id => @id, :text => "Page ##{@id}", :body => "Body for the Page ##{@id}, time: #{Time.new}" }
+      page = { :id => @id, :text => "Page ##{@id}", :body => "<b>Body</b> for the Page ##{@id}, time: #{Time.new}" }
       page.to_json
     end
 
