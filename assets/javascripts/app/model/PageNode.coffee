@@ -5,4 +5,3 @@ Ext.define 'Geeki.model.PageNode',
     { name: 'id', type: 'int' },
     { name: 'text', type: 'string' }
   ]
-
