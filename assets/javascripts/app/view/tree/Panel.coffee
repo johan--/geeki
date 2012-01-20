@@ -6,6 +6,7 @@ Ext.define 'Rwiki.view.tree.Panel',
   width: 300
   collapsible: true
   resizable: true
+  rootVisible: false
   store: Ext.create('Rwiki.store.PageNodes')
 
   findPageNodeById: (id) ->
