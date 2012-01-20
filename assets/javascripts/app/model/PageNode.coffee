@@ -6,5 +6,3 @@ Ext.define 'Geeki.model.PageNode',
     { name: 'text', type: 'string' }
   ]
 
-  isRoot: ->
-    @id == 1
