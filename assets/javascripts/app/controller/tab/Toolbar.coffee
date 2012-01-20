@@ -35,7 +35,7 @@ Ext.define 'Rwiki.controller.tab.Toolbar',
           Ext.getBody().mask("Lading page #{page.get('text')}")
           Rwiki.model.Page.load page.getId(),
             success: (page) =>
-              @getPanel().getActiveTab().setPage(page)
+              @getPanel().getActiveTab().updateContent(page.get('body'))
               Ext.getBody().unmask()
 
       'rwikiToolbar #about':

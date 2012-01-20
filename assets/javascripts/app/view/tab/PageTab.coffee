@@ -17,3 +17,6 @@ Ext.define 'Rwiki.view.tab.PageTab',
 
     @title = @page.get('text')
     @html = @page.get('body')
+
+  updateContent: (content) ->
+    Ext.get(@getId()).update(content)
