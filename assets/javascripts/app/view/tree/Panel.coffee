@@ -4,6 +4,7 @@ Ext.define 'Rwiki.view.tree.Panel',
 
   title: 'Rwiki Pages'
   width: 300
+  minWidth: 200
   collapsible: true
   resizable: true
   rootVisible: false
