@@ -26,11 +26,11 @@ Ext.define 'Geeki.controller.tree.Panel',
 
     @control
       geekiTreePanel:
-        itemclick: @_onNodeClick,
-        itemcontextmenu: @_onNodeContextMenu
+        itemclick: @onTreeNodeClick,
+        itemcontextmenu: @onTreeNodeContextMenu
 
-  _onNodeClick: (view, pageNode) ->
-    console.log('TreePanel#_onNodeSelect', arguments)
+  onTreeNodeClick: (view, pageNode) ->
+    console.log('TreePanel#onTreeNodeClick', arguments)
 
     pageId = pageNode.getId()
     tabPanel = @getTabPanel()
@@ -48,8 +48,8 @@ Ext.define 'Geeki.controller.tree.Panel',
     else
       tabPanel.setActiveTab(tab)
 
-  _onNodeContextMenu: (view, pageNode, item, index, event) ->
-    console.log('TreePanel#_onNodeContextMenu', arguments)
+  onTreeNodeContextMenu: (view, pageNode, item, index, event) ->
+    console.log('TreePanel#onTreeNodeContextMenu', arguments)
 
     # display the context menu
     menu = @_getContextMenu()
