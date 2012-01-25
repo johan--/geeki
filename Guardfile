@@ -10,3 +10,7 @@ guard("sprockets2",
   watch %r(^assets/.+$)
   watch "lib/geeki/app.rb"
 end
+
+guard 'coffeescript', :input => 'assets/javascripts/app.coffee', :output => 'public/assets' do
+  watch %r(^assets/javascripts/app.coffee$)
+end

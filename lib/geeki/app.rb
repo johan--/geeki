@@ -52,5 +52,9 @@ module Geeki
       page.to_json
     end
 
+    get '/jasmine' do
+      erb :jasmine
+    end
+
   end
 end
