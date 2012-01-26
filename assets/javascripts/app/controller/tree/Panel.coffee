@@ -37,8 +37,10 @@ Ext.define 'Geeki.controller.tree.Panel',
     tab = tabPanel.findPageTabById(pageId)
 
     unless tab
-      mask = new Ext.LoadMask(Ext.getBody(), msg: "Loading page '#{pageNode.get('text')}'")
+      mask = new Ext.LoadMask(Ext.getBody(), msg: "Loading page: '#{pageNode.get('text')}'")
       mask.show()
+      sb = Ext.getCmp('geeki-status-bar')
+      sb.showBusy()
 
       Geeki.model.Page.load pageId,
         success: (page) =>
@@ -47,6 +49,7 @@ Ext.define 'Geeki.controller.tree.Panel',
 
           tabPanel.createTabFor(page)
           mask.hide()
+          sb.clearStatus(useDefaults: true)
     else
       tabPanel.setActiveTab(tab)
 

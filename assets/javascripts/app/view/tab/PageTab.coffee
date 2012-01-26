@@ -1,5 +1,5 @@
 Ext.define 'Geeki.view.tab.PageTab',
-  extend: 'Ext.Container'
+  extend: 'Ext.Panel'
   alias: 'widget.geekiPageTab'
 
   closable: true

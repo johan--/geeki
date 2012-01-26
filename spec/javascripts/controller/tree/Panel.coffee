@@ -15,3 +15,6 @@ describe "Geeki.controller.tree.Panel", ->
 
   it "should be loaded", ->
     expect(store.isLoading()).toBeFalsy()
+
+  describe ".onTreeNodeClick", ->
+    controller.onTreeNodeClick(null, pageNode)

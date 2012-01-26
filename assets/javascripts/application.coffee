@@ -5,6 +5,7 @@
 #= require ./app/view/tree/Panel
 #= require ./app/view/tab/PageTab
 #= require ./app/view/tab/Toolbar
+#= require ./app/view/tab/Statusbar
 #= require ./app/view/tab/Panel
 #= require ./app/view/EditorWindow
 #= require ./app/view/AboutDialog

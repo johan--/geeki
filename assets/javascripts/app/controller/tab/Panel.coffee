@@ -26,3 +26,6 @@ Ext.define 'Geeki.controller.tab.Panel',
 
         add: (tabPanel, tab) ->
           console.log('TabPanel#add', arguments)
+
+  getStatusBar: ->
+    Ext.getCmp('my-status')

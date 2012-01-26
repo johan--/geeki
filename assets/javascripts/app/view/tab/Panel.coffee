@@ -3,6 +3,8 @@ Ext.define 'Geeki.view.tab.Panel',
   alias: 'widget.geekiTabPanel'
 
   tbar: Ext.create('Geeki.view.tab.Toolbar')
+  bbar: Ext.create('Geeki.view.tab.Statusbar')
+
   items: []
 
   findPageTabById: (id) ->
