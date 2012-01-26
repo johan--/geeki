@@ -19,6 +19,8 @@ GEM
     guard-coffeescript (0.5.4)
       coffee-script (>= 2.2.0)
       guard (>= 0.8.3)
+    guard-shell (0.2.0)
+      guard (>= 0.2.0)
     guard-sprockets2 (0.0.6)
       guard
       sprockets (~> 2.0)
@@ -28,6 +30,7 @@ GEM
       git (>= 1.2.5)
       rake
     json_pure (1.6.5)
+    libnotify (0.7.2)
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
     method_source (0.6.7)
@@ -87,9 +90,11 @@ DEPENDENCIES
   coffee-script
   guard
   guard-coffeescript
+  guard-shell
   guard-sprockets2
   jeweler
   json_pure
+  libnotify
   pry
   rb-fsevent
   ruby-debug19

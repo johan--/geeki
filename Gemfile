@@ -22,6 +22,8 @@ group :development do
   gem 'guard'
   gem 'guard-sprockets2'
   gem 'guard-coffeescript'
+  gem 'guard-shell'
   gem 'rb-fsevent'
+  gem 'libnotify'
 end
 
