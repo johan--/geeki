@@ -37,12 +37,16 @@ Ext.define 'Geeki.controller.tree.Panel',
     tab = tabPanel.findPageTabById(pageId)
 
     unless tab
+      mask = new Ext.LoadMask(Ext.getBody(), msg: "Loading page '#{pageNode.get('text')}'")
+      mask.show()
+
       Geeki.model.Page.load pageId,
         success: (page) =>
           console.log('Page#load', arguments)
           @application.fireEvent('geeki:pageLoaded', page)
 
           tabPanel.createTabFor(page)
+          mask.hide()
     else
       tabPanel.setActiveTab(tab)
 
@@ -50,10 +54,10 @@ Ext.define 'Geeki.controller.tree.Panel',
     console.log('TreePanel#onTreeNodeContextMenu', arguments)
 
     # display the context menu
-    menu = @_getContextMenu()
+    menu = @getContextMenu()
     menu.showFor(pageNode, event.getXY())
 
     event.stopEvent()
 
-  _getContextMenu: ->
-    @_contextMenu ||= Ext.create('Geeki.view.tree.ContextMenu')
+  getContextMenu: ->
+    @contextMenu ||= Ext.create('Geeki.view.tree.ContextMenu')
