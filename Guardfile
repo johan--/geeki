@@ -14,3 +14,7 @@ end
 guard 'coffeescript', :input => 'assets/javascripts/app.coffee', :output => 'public/assets' do
   watch %r(^assets/javascripts/app.coffee$)
 end
+
+guard 'coffeescript', :input => 'spec/javascripts', :output => 'public/spec' do
+  watch %r(^spec/javascripts)
+end
