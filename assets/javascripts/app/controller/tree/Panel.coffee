@@ -42,9 +42,7 @@ Ext.define 'Geeki.controller.tree.Panel',
           console.log('Page#load', arguments)
           @application.fireEvent('geeki:pageLoaded', page)
 
-          tab = Ext.create('Geeki.view.tab.PageTab', page: page)
-          tabPanel.add(tab)
-          tabPanel.setActiveTab(tab)
+          tabPanel.createTabFor(page)
     else
       tabPanel.setActiveTab(tab)
 
