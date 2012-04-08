@@ -10,11 +10,10 @@ Ext.define 'Geeki.view.EditorWindow',
   minWidth: 350
   height: 400
 
-  layout: 'border'
+  layout: 'fit'
 
   constructor: (options  = {}) ->
-    @htmlEditor = Ext.create 'Ext.form.HtmlEditor',
-      region: 'center'
+    @htmlEditor = new Ext.ux.AceEditor()
 
     options.items = [@htmlEditor]
 

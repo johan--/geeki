@@ -5,6 +5,13 @@
 
     <script type="text/javascript" src="/ext-4.0/ext-all-debug.js"></script>
     <script type="text/javascript" src="/ext-ux/StatusBar.js"></script>
+    <script type="text/javascript">
+      bravojs = {
+        url: window.location.protocol + "//" + window.location.host + "/extjs4-ace/Component.js"
+      };
+      document.write('<script type="text/javascript" src="' + bravojs.url + '"><' + '/script>');
+    </script>
+    
     <link rel="stylesheet" type="text/css" href="/ext-4.0/resources/css/ext-all.css">
 
     <script type="text/javascript" src="<%= javascript_path('application.js') %>"></script>
