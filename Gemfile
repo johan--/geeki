@@ -12,4 +12,21 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'jquery-rails'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+end
+
+group :test, :development do
+  gem 'jasmine'
+  gem 'jasminerice'
+
+  gem 'guard'
+  gem 'guard-jasmine'
+
+  gem 'pry'
 end
